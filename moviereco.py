@@ -93,14 +93,18 @@ def getmoviename(movieidlist):
 	return movienamelist
 
 
-inputid=raw_input("请输入id(1-1200之间)，系统将推荐10个与其品味最相似的用户，并给该id用户推荐10部其最可能喜欢的电影:")
-movierecoid=getrecommandbyid(ratingdict,inputid)
-idreco=toptenmatches(ratingdict,inputid)
-print "与该id用户电影品味最相近的10个用户是:\n"
-for i in idreco:
-	print i.keys()[0],'\n'
-print "*********************************************************************\n"
-moviereco=getmoviename(movierecoid)
-print "该id用户最可能喜欢的10部电影是:\n"
-for i in moviereco:
-	print i,'\n'
+def main():
+#主函数体
+	inputid=raw_input("请输入id(1-1200之间)，系统将推荐10个与其品味最相似的用户，并给该id用户推荐10部其最可能喜欢的电影:")
+	movierecoid=getrecommandbyid(ratingdict,inputid)
+	idreco=toptenmatches(ratingdict,inputid)
+	print "与该id用户电影品味最相近的10个用户是:\n"
+	for i in idreco:
+		print i.keys()[0],'\n'
+	print "*********************************************************************\n"
+	moviereco=getmoviename(movierecoid)
+	print "该id用户最可能喜欢的10部电影是:\n"
+	for i in moviereco:
+		print i,'\n'
+if __name__=="__main__":
+	main()
